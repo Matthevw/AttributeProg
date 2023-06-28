@@ -42,15 +42,8 @@ class AddTwoProducts
         $product->setPrice(45);
         $product->setVisibility(4);
         $product->setStatus(1);
-        // $product->setData(
-        //     [
-        //         'customsizelabel' => 'L for tall'
-        //     ]
-        // );
         $product->setData('custom-size-label', 'M for size plus');
 
         $product->save();
-
-        // $this->productResourceModel->save($product);
     }
 }

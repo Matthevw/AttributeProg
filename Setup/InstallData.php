@@ -11,11 +11,6 @@ use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 
-
-/**
- * Class InstallData
- * @package Test\Demo\Setup
- */
 class InstallData implements InstallDataInterface
 {
     /**
@@ -35,13 +30,11 @@ class InstallData implements InstallDataInterface
         $this->eavSetupFactory = $eavSetupFactory;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         /** @var EavSetup $eavSetup */
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
+
         $eavSetup->addAttribute(
             \Magento\Catalog\Model\Product::ENTITY,
             'test_attribute',
